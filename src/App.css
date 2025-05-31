@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap");
+
+body {
+  font-family: "Cascadia Mono", monospace;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #e5e7eb; /* Light gray for light mode */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #a3a3a3; /* Neutral gray for thumb */
+  border-radius: 8px;
+  border: 2px solid #e5e7eb; /* Padding for thumb */
+  transition: background 0.2s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6366f1; /* Indigo-500 for accent on hover */
+}
+
+
+.calendar-customHeight {
+  height: calc(100vh - 51px); /* Adjust height to fit the screen */
+}
+
