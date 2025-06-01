@@ -67,7 +67,7 @@ export const HelpSupport = () => {
 
   return (
     <div
-      className={`w-full h-fit px-3 py-10 sm:py-5 sm:max-h-screen sm:overflow-auto custom-scrollbar ${
+      className={`w-full h-fit px-3 py-10 sm:py-5 sm:h-screen sm:overflow-auto custom-scrollbar ${
         isDark ? "bg-[#1B1B1B] text-white" : "text-gray-700"
       } `}
     >
@@ -76,7 +76,7 @@ export const HelpSupport = () => {
         onClick={() => history.back()}
       />
 
-      <h1 className="text-4xl font-bold mb-5 text-center">Help & Support</h1>
+      <h1 className="text-4xl font-bold mb-5 mt-5 text-center">Help & Support</h1>
       <p className="text-lg  mb-8">
         Welcome to the Help & Support page. If you have any questions or need
         assistance, please refer to the resources below or contact us directly.
@@ -110,12 +110,10 @@ export const HelpSupport = () => {
       </section>
       <section>
         <h2 className="text-2xl font-semibold  mb-4">Contact Us</h2>
-        <p className=" mb-2">
+        <p className=" mb-5">
           <span className="font-medium">Email:</span> support@todo.com
         </p>
-        <p className="">
-          <span className="font-medium">Phone:</span> +91 9876543210
-        </p>
+       
       </section>
     </div>
   );

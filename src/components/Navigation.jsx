@@ -17,7 +17,7 @@ export const Navigation = () => {
   return (
     <>
       <nav
-        className={` ${
+        className={`max-h-screen ${
           isDark ? "sm:bg-[#313131]" : "sm:bg-[#1B1B1B]"
         } sm:min-h-screen w-full  sm:w-max sm:px-8 text-white font-bold fixed bottom-0 left-0 z-50  sm:sticky   `}
       >

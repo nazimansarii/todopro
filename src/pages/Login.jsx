@@ -29,7 +29,7 @@ const Login = () => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
-      navigate("/");
+      navigate("/tasks");
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
         setError({ password: "Invalid email or password" });
@@ -51,7 +51,7 @@ const Login = () => {
     setResetMessage("");
     setError({});
     if (!data.email) {
-      setError({ email: "Please enter your email to reset password" });
+      setError({ email: "Please enter your email" });
       return;
     }
     setResetLoading(true);
