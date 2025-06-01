@@ -232,17 +232,19 @@ const Notes = () => {
               >
                 {editId === note.id ? (
                   <>
+                      <div className="border-b rounded mb-2">
                     <Input
                       type="text"
                       value={editTitle}
                       onChange={(e) => setEditTitle(e.target.value)}
                       className="mb-2"
                     />
+                      </div>
                     <Input
                       type="text"
                       value={editContent}
                       onChange={(e) => setEditContent(e.target.value)}
-                      className="mb-2"
+                      className="mb-2 border"
                     />
                     <div className="flex gap-2 mt-2">
                       <button
