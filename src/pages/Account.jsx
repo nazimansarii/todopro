@@ -13,6 +13,7 @@ import {
   getCountFromServer,
 } from "firebase/firestore";
 import Modal from "../components/Modal";
+import { useNavigate } from "react-router"; // <-- Add this import
 
 export const Account = () => {
   const [isDark] = useContext(ThemeContext);
@@ -30,6 +31,8 @@ export const Account = () => {
   const [modalMsg, setModalMsg] = useState("");
   const [modalType, setModalType] = useState("info");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+
+  const navigate = useNavigate(); // <-- Add this
 
   useEffect(() => {
     if (!user) return;
@@ -98,11 +101,20 @@ export const Account = () => {
       setModalMsg("Your account has been deleted successfully.");
       setModalOpen(true);
       setShowDeleteConfirm(false);
+
+      setTimeout(() => {
+        setModalOpen(false);
+        navigate("/account");
+      }, 3000);
     } catch (error) {
       setModalType("delete");
-      setModalMsg("Delete account error: " + (error?.message || "Unknown error"));
+      setModalMsg("Delete account failed. Please try again.");
       setModalOpen(true);
       setShowDeleteConfirm(false);
+
+      setTimeout(() => {
+        setModalOpen(false);
+      }, 3000);
     }
   };
 

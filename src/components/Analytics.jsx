@@ -18,6 +18,21 @@ import { auth, db } from "../firebase/firebaseConfig";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 const COLORS = ["#FFBB28", "#FF8042", "#00C49F"]
 
+const CATEGORY_COLORS = {
+  Work: "#6366f1",
+  Study: "#06b6d4",
+  Health: "#22c55e",
+  Market: "#f59e42",
+  Movie: "#f472b6",
+  Shopping: "#facc15",
+  Home: "#a3e635",
+  Finance: "#f43f5e",
+  Travel: "#38bdf8",
+  Communication: "#f87171",
+  General: "#818cf8",
+  Uncategorized: "#a1a1aa",
+};
+
 const Analytics = () => {
   // real data fetching would go here
   const [user, setUser] = useState(null);
@@ -157,7 +172,7 @@ const Analytics = () => {
   }, [user]);
 
   return (
-    <div className="p-4 max-w-4xl mx-auto">
+    <div className="p-4  mx-auto">
       <h2 className="text-2xl font-bold mb-4">Productivity Analytics</h2>
       
       {/* Productivity Summary */}
@@ -208,15 +223,30 @@ const Analytics = () => {
                 label
               >
                 {categoryData.map((entry, idx) => (
-                  <Cell key={entry.name} fill={COLORS[idx % COLORS.length]} />
+                  <Cell
+                    key={entry.name}
+                    fill={CATEGORY_COLORS[entry.name] || COLORS[idx % COLORS.length]}
+                  />
                 ))}
               </Pie>
               <Tooltip />
             </PieChart>
           </ResponsiveContainer>
+          {/* Category color legend */}
+          <div className="flex flex-wrap gap-3 mt-4">
+            {categoryData.map((entry) => (
+              <div key={entry.name} className="flex items-center gap-2">
+                <span
+                  className="inline-block w-4 h-4 rounded"
+                  style={{
+                    backgroundColor: CATEGORY_COLORS[entry.name] || "#a1a1aa",
+                  }}
+                ></span>
+                <span className="text-sm">{entry.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-
-        
       </div>
 
       {/* Line Chart: Notes Over Time */}

@@ -22,7 +22,7 @@ const faqData = [
         <Link to="mailto:support@todo.com" className="underline text-cyan-400">
           support@todo.com
         </Link>{" "}
-        or call us at <b>+91 9876543210</b>. We aim to respond within 24 hours.
+        
       </>
     ),
   },

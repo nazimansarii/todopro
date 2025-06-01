@@ -56,7 +56,7 @@ export const Home = () => {
       {/* Modal for logout error */}
       <Modal type={modalType} message={modalMsg} isOpen={modalOpen} />
       <section
-        className={`h-screen  sm:h-screen pb-5 sm:pb-0  sm:overflow-y-scroll custom-scrollbar   ${
+        className={`h-fit  sm:h-screen pb-5 sm:pb-0  sm:overflow-y-scroll custom-scrollbar   ${
           isDark ? "bg-[#1B1B1B] text-white" : " text-[#1B1B1B]"
         } w-full  sm:flex-row p-0 `}
       >
